@@ -1,0 +1,40 @@
+package atlantic.CasinoOnline.xpath;
+
+import net.serenitybdd.core.annotations.findby.FindBy;
+import org.openqa.selenium.WebElement;
+
+public class XpathIniciar_Sesion {
+
+    private static XpathIniciar_Sesion obj = null;
+    private XpathIniciar_Sesion() {
+    }
+    public static XpathIniciar_Sesion getInstancia() {
+        instanciar();
+        return obj;
+    }
+    private synchronized static void instanciar() {
+        if (obj == null) {
+            obj = new XpathIniciar_Sesion();
+        }
+    }
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException();
+    }
+
+    public final String Xpath_btnCookies="//*[@id='cookies-popover']/button";
+    public final String Xpath_btnIniciarSesion="//button[contains(text(),'Ingresar')]";
+    public final String Xpath_btnIrACasino="//button[contains(text(),'Ir a casino')]";
+    public final String Xpath_btnIrASports="//button[contains(text(),'Ir a sports')]";
+    public final String Xpath_txtUsuario="//input[@id='user']";
+    public final String Xpath_txtPassword="//input[@id='password']";
+    public final String Xpath_btnIngresar="//*[@id='menuSlideLogin']/form/button";
+    public final String Xpath_lblUsuarioLogueado="//p[contains(text(),'usuVahpc')]";
+    @FindBy(xpath = "//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium clmc-white-icon clmc-hidden mobile-login-button css-slyssw']")
+    public WebElement Xpath_btnCuentaIngresada;
+
+    public String retornarXpathParametroVertical(String dato){
+        return "//button[contains(text(),'"+dato+"')]";
+    }
+
+}
